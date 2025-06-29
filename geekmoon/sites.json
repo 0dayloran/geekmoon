@@ -1,0 +1,50 @@
+{
+  "Instagram": {
+    "url": "https://www.instagram.com/{username}",
+    "error_keywords": ["Page Not Found", "The link you followed may be broken"],
+    "activity_selector": "._aa_c",
+    "location_selector": "._aa_c"
+  },
+  "VK": {
+    "url": "https://vk.com/{username}",
+    "error_keywords": ["Пользователь не найден", "User not found"],
+    "activity_selector": ".profile_online_lv",
+    "location_selector": ".profile_label"
+  },
+  "GitHub": {
+    "url": "https://github.com/{username}",
+    "error_keywords": ["Not Found"],
+    "activity_selector": ".ContributionCalendar-day",
+    "location_selector": "[itemprop='homeLocation']"
+  },
+  "Twitter": {
+    "url": "https://twitter.com/{username}",
+    "error_keywords": ["This account doesn’t exist", "page doesn’t exist"],
+    "activity_selector": "time",
+    "location_selector": "[data-testid='UserLocation']"
+  },
+  "Habr": {
+    "url": "https://habr.com/ru/users/{username}/",
+    "error_keywords": ["Страница не найдена"],
+    "activity_selector": ".tm-user-info__last-seen",
+    "location_selector": ".tm-user-info__location"
+  },
+  "Reddit": {
+    "url": "https://www.reddit.com/user/{username}",
+    "error_keywords": ["page not found"],
+    "activity_selector": "._2mHuuvyV9doV3zwbZPt-Ec",
+    "location_selector": null
+  },
+  "Steam": {
+    "url": "https://steamcommunity.com/id/{username}",
+    "error_keywords": ["The specified profile could not be found"],
+    "activity_selector": ".profile_in_game_header",
+    "location_selector": ".profile_flag"
+  },
+  "Pikabu": {
+    "url": "https://pikabu.ru/@{username}",
+    "error_keywords": ["Страница не найдена"],
+    "activity_selector": ".user__rating-count",
+    "location_selector": null
+  }
+}
