@@ -1,58 +1,52 @@
-# Geekmoon
+# Geekmoon - The Next-Gen OSINT Tool
 
-Geekmoon is a powerful OSINT tool for searching usernames across a vast number of social networks and websites. It's inspired by Sherlock and designed for both English and Russian-speaking environments.
+**Geekmoon** is a revolutionary OSINT tool for searching usernames across social networks and websites. It's built for speed, power, and deep analysis, leaving other tools behind.
 
-## Features
+**Created by:** [0dayloran on GitHub](https://github.com/0dayloran) | [0dayloran on Twitter](https://twitter.com/0dayloran)
 
-- **Extensive Site Support:** Searches over 150+ websites (currently configured with a subset, easily expandable).
-- **Anti-Bot Evasion:** Uses Selenium with a real browser (Chrome Headless) to bypass Cloudflare and other anti-DDoS protections.
-- **Smart Verification:** Automatically checks for "Not Found" or "404" keywords in the page's HTML to reduce false positives.
-- **User Activity:** Displays the user's last activity next to the found profile link.
-- **Geolocation:** Shows the user's location if specified in their profile.
+---
+
+## 🔥 Key Features That Crush the Competition
+
+*   **Blazing-Fast Async Scans:** Geekmoon uses an asynchronous core to scan dozens of sites simultaneously. It's one of the fastest username checkers in the world.
+*   **Massive Site Support:** Searches over 350+ websites, with a focus on both international and Russian-speaking communities.
+*   **Smart Anti-Bot Evasion:** Uses a real browser engine (`pyppeteer`) to bypass Cloudflare, captchas, and other anti-bot protections that stop other tools.
+*   **Recursive Search (Username Mutation):** If the primary username isn't found, Geekmoon can automatically generate and check variations (`user` -> `user_`, `user123`) to uncover hidden profiles. Use the `--recursive` flag.
+*   **Profile Interest Analysis:** Geekmoon doesn't just find pages; it analyzes their content for keywords and tags the profile with potential interests like `infosec`, `crypto`, `gaming`, etc.
+*   **Avatar EXIF Data Extraction:** The tool attempts to download profile pictures and extract hidden EXIF metadata, which can reveal GPS coordinates, camera models, and timestamps.
+*   **Interactive Category Selection:** Don't want to scan all 350+ sites? Use the `--interactive` flag to choose specific categories to scan (e.g., `coding`, `social`, `russian`).
+*   **Multiple Export Formats:** Save your results in human-readable or machine-readable formats.
+    *   `--output-txt`: Plain text report.
+    *   `--output-md`: Markdown report.
+    *   `--output-json`: For integration with other tools.
+    *   `--output-csv`: For spreadsheet analysis.
 
 ## Installation
 
-You can install Geekmoon using pip:
-
 ```bash
-pip install .
-```
-
-Or, if you want to install it from GitHub:
-
-```bash
-pip install git+https://github.com/yourusername/geekmoon.git
+# Make sure you have Google Chrome installed
+# Then, install from GitHub:
+pip install git+https://github.com/0dayloran/geekmoon.git
 ```
 
 ## Usage
 
-To search for a username, simply run:
-
+**Basic Scan:**
 ```bash
 geekmoon <username>
 ```
 
-Example:
-
+**Recursive Scan & Save to Markdown:**
 ```bash
-geekmoon johnsmith
+geekmoon <username> --recursive --output-md <username>.md
 ```
 
-## Extending the Site List
-
-You can easily add more websites to search by editing the `geekmoon/sites.json` file. Follow the existing format:
-
-```json
-{
-  "Site Name": {
-    "url": "https://sitename.com/{username}",
-    "error_keywords": ["Keyword 1", "Keyword 2"],
-    "activity_selector": "css.selector.for.activity",
-    "location_selector": "css.selector.for.location"
-  }
-}
+**Interactive Scan for Gaming & Coding Sites:**
+```bash
+geekmoon <username> --interactive
+# Then follow the prompts to select categories
 ```
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. For legal use only.

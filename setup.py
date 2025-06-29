@@ -18,10 +18,12 @@ setup(
         'geekmoon': ['sites.json'],
     },
     install_requires=[
-        "requests",
-        "selenium",
-        "webdriver-manager",
+        "aiohttp",
+        "pyppeteer",
         "beautifulsoup4",
+        "dateparser",
+        "Pillow",
+        "exifread",
     ],
     entry_points={
         "console_scripts": [
